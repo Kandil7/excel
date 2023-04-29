@@ -55,10 +55,14 @@ class _DataTable2SimpleDemoState extends State<DataTable2SimpleDemo> {
                     DataCell(
                       TextFormField(
                         controller: StudentIdController[index],
-                        onChanged: (value){
-                          GetStorageHelper.writeData('StudentID_$index', value);
-                          ExcelHelper.updateCell(
-                              'Students', 'D${(11+index).toString()}', value);
+                        onChanged: (value)async{
+                          if (value != null) {
+                            await GetStorageHelper.writeData(
+                                'StudentID_$index', value);
+                             await ExcelHelper.updateCell(
+                                'Students', 'D${(11 + index).toString()}', value);}
+
+
                         },
                         decoration: InputDecoration(
                           hintText: 'Enter Student ID',
@@ -69,11 +73,15 @@ class _DataTable2SimpleDemoState extends State<DataTable2SimpleDemo> {
                     DataCell(
                       TextFormField(
                         controller: StudentNameController[index],
-                        onChanged: (value){
-                          GetStorageHelper.writeData('StudentName_$index', value);
-                          ExcelHelper.updateCell(
+                        onChanged: (value)async{
+                          if(value!=null){
+                            await GetStorageHelper.writeData('StudentName_$index', value);
+                            await ExcelHelper.updateCell(
                               'Students', 'E${(11+index).toString()}', value);
+                          }
                         },
+
+
                         decoration: InputDecoration(
                           hintText: 'Enter Student Name',
                           border: OutlineInputBorder(),

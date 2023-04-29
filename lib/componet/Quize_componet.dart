@@ -1,3 +1,4 @@
+import 'package:excel/Excel%20helper/Excel_service.dart';
 import 'package:flutter/material.dart';
 
 import '../storage_helper/get_storage_helper.dart';
@@ -97,38 +98,77 @@ initQizeController(){
 
 
 
-CalculateTotalQuizMark(){
-  for (int i = 0; i < total; i++) {
-    if (Quiz1_Q1_controller[i].text.isEmpty) {
-      Quiz1_Q1_controller[i].text = '0';
-    }
-    if (Quiz1_Q2_controller[i].text.isEmpty) {
-      Quiz1_Q2_controller[i].text = '0';
-    }
-    if (Quiz1_Q3_controller[i].text.isEmpty) {
-      Quiz1_Q3_controller[i].text = '0';
-    }
-    if (Quiz1_Q4_controller[i].text.isEmpty) {
-      Quiz1_Q4_controller[i].text = '0';
-    }
+// CalculateTotalQuizMark(){
+//   for (int i = 0; i < total; i++) {
+//     if (Quiz1_Q1_controller[i].text.isEmpty) {
+//       Quiz1_Q1_controller[i].text = '0';
+//     }
+//     if (Quiz1_Q2_controller[i].text.isEmpty) {
+//       Quiz1_Q2_controller[i].text = '0';
+//     }
+//     if (Quiz1_Q3_controller[i].text.isEmpty) {
+//       Quiz1_Q3_controller[i].text = '0';
+//     }
+//     if (Quiz1_Q4_controller[i].text.isEmpty) {
+//       Quiz1_Q4_controller[i].text = '0';
+//     }
+//
+//
+//     Quiz1_total_controller!.add(TextEditingController(text: (int.parse(Quiz1_Q1_controller[i].text)+int.parse(Quiz1_Q2_controller[i].text)+int.parse(Quiz1_Q3_controller[i].text)+int.parse(Quiz1_Q4_controller[i].text)+int.parse(Quiz1_Q5_controller[i].text)).toString()));
+//     Quiz2_total_controller!.add(TextEditingController(text: (int.parse(Quiz2_Q1_controller[i].text)+int.parse(Quiz2_Q2_controller[i].text)+int.parse(Quiz2_Q3_controller[i].text)+int.parse(Quiz2_Q4_controller[i].text)+int.parse(Quiz2_Q5_controller[i].text)).toString()));
+//     Quiz3_total_controller!.add(TextEditingController(text: (int.parse(Quiz3_Q1_controller[i].text)+int.parse(Quiz3_Q2_controller[i].text)+int.parse(Quiz3_Q3_controller[i].text)+int.parse(Quiz3_Q4_controller[i].text)+int.parse(Quiz3_Q5_controller[i].text)).toString()));
+//     Quiz4_total_controller!.add(TextEditingController(text: (int.parse(Quiz4_Q1_controller[i].text)+int.parse(Quiz4_Q2_controller[i].text)+int.parse(Quiz4_Q3_controller[i].text)+int.parse(Quiz4_Q4_controller[i].text)+int.parse(Quiz4_Q5_controller[i].text)).toString()));
+//     Quizes_total_marks_controller!.add(TextEditingController(text: (int.parse(Quiz1_total_controller![i].text)+int.parse(Quiz2_total_controller![i].text)+int.parse(Quiz3_total_controller![i].text)+int.parse(Quiz4_total_controller![i].text)).toString()));
+//
+//   }
+//   GetStorageHelper.writeData('Quize1_total', Quiz1_total_controller);
+//   GetStorageHelper.writeData('Quize2_total', Quiz2_total_controller);
+//   GetStorageHelper.writeData('Quize3_total', Quiz3_total_controller);
+//   GetStorageHelper.writeData('Quize4_total', Quiz4_total_controller);
+//   GetStorageHelper.writeData('Quizes_total_marks', Quizes_total_marks_controller);
+//
+// }
 
-
-    Quiz1_total_controller!.add(TextEditingController(text: (int.parse(Quiz1_Q1_controller[i].text)+int.parse(Quiz1_Q2_controller[i].text)+int.parse(Quiz1_Q3_controller[i].text)+int.parse(Quiz1_Q4_controller[i].text)+int.parse(Quiz1_Q5_controller[i].text)).toString()));
-    Quiz2_total_controller!.add(TextEditingController(text: (int.parse(Quiz2_Q1_controller[i].text)+int.parse(Quiz2_Q2_controller[i].text)+int.parse(Quiz2_Q3_controller[i].text)+int.parse(Quiz2_Q4_controller[i].text)+int.parse(Quiz2_Q5_controller[i].text)).toString()));
-    Quiz3_total_controller!.add(TextEditingController(text: (int.parse(Quiz3_Q1_controller[i].text)+int.parse(Quiz3_Q2_controller[i].text)+int.parse(Quiz3_Q3_controller[i].text)+int.parse(Quiz3_Q4_controller[i].text)+int.parse(Quiz3_Q5_controller[i].text)).toString()));
-    Quiz4_total_controller!.add(TextEditingController(text: (int.parse(Quiz4_Q1_controller[i].text)+int.parse(Quiz4_Q2_controller[i].text)+int.parse(Quiz4_Q3_controller[i].text)+int.parse(Quiz4_Q4_controller[i].text)+int.parse(Quiz4_Q5_controller[i].text)).toString()));
-    Quizes_total_marks_controller!.add(TextEditingController(text: (int.parse(Quiz1_total_controller![i].text)+int.parse(Quiz2_total_controller![i].text)+int.parse(Quiz3_total_controller![i].text)+int.parse(Quiz4_total_controller![i].text)).toString()));
-
-  }
-  GetStorageHelper.writeData('Quize1_total', Quiz1_total_controller);
-  GetStorageHelper.writeData('Quize2_total', Quiz2_total_controller);
-  GetStorageHelper.writeData('Quize3_total', Quiz3_total_controller);
-  GetStorageHelper.writeData('Quize4_total', Quiz4_total_controller);
-  GetStorageHelper.writeData('Quizes_total_marks', Quizes_total_marks_controller);
-
-}
-
-initQuizzes(){
+initQuizzes() async {
   initQizeController();
-  CalculateTotalQuizMark();
+  // CalculateTotalQuizMark();
+  await GetTotalFromExcel();
 }
+var cellindex;
+GetTotalFromExcel() async{
+  for (int i = 0; i < total; i++) {
+    for(int j=0; j< 5;j++){
+      cellindex=ExcelHelper.convertToCellReference(j+26, i+31);
+      await ExcelHelper.readCell('Quizzes', cellindex).then((value) {
+        if(value ==null || value==''|| value.isEmpty){
+          value='0';
+        }
+        if(j==0){
+          Quizes_total_marks_controller[i].text=value;
+          GetStorageHelper.writeData('Quizes_total_marks_$i', Quizes_total_marks_controller[i].text);
+        }
+        if(j==1){
+          Quiz1_total_controller![i].text=value;
+          GetStorageHelper.writeData('Quize1_total_$i', Quiz1_total_controller![i].text);
+
+        }
+        if(j==2){
+          Quiz2_total_controller![i].text=value;
+          GetStorageHelper.writeData('Quize2_total_$i', Quiz2_total_controller![i].text);
+        }
+        if(j==3){
+          Quiz3_total_controller![i].text=value;
+          GetStorageHelper.writeData('Quize3_total_$i', Quiz3_total_controller![i].text);
+        }
+        if(j==4){
+          Quiz4_total_controller![i].text=value;
+          GetStorageHelper.writeData('Quize4_total_$i', Quiz4_total_controller![i].text);
+        }
+
+      });
+
+    }
+  }
+
+}
+

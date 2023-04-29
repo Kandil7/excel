@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Excel helper/Excel_service.dart';
 import '../storage_helper/get_storage_helper.dart';
 import '../utils/constant.dart';
 
@@ -117,7 +118,31 @@ CalculateLabExamTotalMarks(){
         double.parse(FinalLabExam_Total_Marks_controller[i].text)).toStringAsFixed(2)));
   }
 }
-initLabs(){
+var cellindex;
+GetLabsDataFromExcel()async{
+  for (var i = 0; i < total; i++) {
+    for (var j = 0; j < 3; j++) {
+      cellindex = ExcelHelper.convertToCellReference((j+19), (i + 31));
+
+      await ExcelHelper.readCell('MidTermExams', cellindex).then((
+          value) {
+        if (j == 0) {
+          LabExam_Total_Marks_controller[i].text = value;
+        }
+        else if (j == 1) {
+          MidLabExam_Total_Marks_controller[i].text = value;
+        }
+        else if (j == 2) {
+          MidLabExam_Total_Marks_controller[i].text = value;
+        }
+      }
+      );
+    }
+
+  }
+}
+
+initLabs()async{
   initLabExamsControllers();
-  CalculateLabExamTotalMarks();
+  await GetLabsDataFromExcel();
 }

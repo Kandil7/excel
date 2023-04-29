@@ -1,6 +1,9 @@
 import 'package:data_table_2/data_table_2.dart';
+import 'package:excel/componet/componet.dart';
 import 'package:flutter/material.dart';
 import '../Excel helper/Excel_service.dart';
+import '../componet/Clos_achievment_report.dart';
+import '../componet/plos _acheivement_component.dart';
 
 /// Example without datasource
 class plo extends StatefulWidget {
@@ -11,6 +14,13 @@ class plo extends StatefulWidget {
 }
 
 class _ploState extends State<plo> {
+  @override
+  void initState() {
+    initScreen();
+    initPloData2();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     //setColumnSizeRatios(1, 2);
@@ -53,6 +63,7 @@ class _ploState extends State<plo> {
                 DataCell(Text(  ('CLO_${index + 1}').toString())),
                 DataCell(
                   TextFormField(
+                    controller:  Description_PLOs_Controller[index],
                     decoration: InputDecoration(
                       hintText: ' Write Description',
                       border: OutlineInputBorder(),
@@ -80,7 +91,8 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'E${(14+index).toString()}')),
+                                        controller:
+                                            K1_PLOs_Achievment_Report_controller[index],
 
 
                                         decoration: InputDecoration(
@@ -101,8 +113,8 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'G${(14+index).toString()}')),
-
+                                        controller:
+                                            K2_PLOs_Achievment_Report_controller[index],
 
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -122,8 +134,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'I${(14+index).toString()}')),
-
+controller: K3_PLOs_Achievment_Report_controller[index],
 
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -160,8 +171,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'K${(14+index).toString()}')),
-
+                                        controller: S1_PLOs_Achievment_Report_controller[index],
 
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -185,7 +195,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'M${(14+index).toString()}')),
+                                        controller: S2_PLOs_Achievment_Report_controller[index],
 
 
                                         decoration: InputDecoration(
@@ -209,7 +219,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'O${(14+index).toString()}')),
+                                        controller: S3_PLOs_Achievment_Report_controller[index],
 
 
                                         decoration: InputDecoration(
@@ -232,7 +242,8 @@ class _ploState extends State<plo> {
                                       height: 30,
                                       child: TextFormField(
 
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'Q${(14+index).toString()}')),
+                                        controller: S4_PLOs_Achievment_Report_controller,
+
 
 
                                         decoration: InputDecoration(
@@ -253,7 +264,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'S${(14+index).toString()}')),
+                                        controller: S5_PLOs_Achievment_Report_controller[index],
 
 
                                         decoration: InputDecoration(
@@ -291,8 +302,8 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
+                                        controller:  V1_PLOs_Achievment_Report_controller[index],
 
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'U${(14+index).toString()}')),
 
 
                                         decoration: InputDecoration(
@@ -316,8 +327,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'W${(14+index).toString()}')),
-
+                                        controller: V2_PLOs_Achievment_Report_controller[index],
 
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -339,8 +349,7 @@ class _ploState extends State<plo> {
                                       width: 60,
                                       height: 30,
                                       child: TextFormField(
-                                        controller: TextEditingController(text: ExcelHelper.readCell('PLO Achievement Report', 'Y${(14+index).toString()}')),
-
+                                        controller: V3_PLOs_Achievment_Report_controller[index],
 
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(

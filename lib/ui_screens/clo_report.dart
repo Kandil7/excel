@@ -1,6 +1,7 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:excel/componet/componet.dart';
 import 'package:flutter/material.dart';
+import '../componet/Clos_achievment_report.dart';
 import '../utils/constant.dart';
 import '../Excel helper/Excel_service.dart';
 
@@ -16,6 +17,7 @@ class _CloReportState extends State<CloReport> {
   @override
   void initState() {
     initScreen();
+    initCLOControllers();
     super.initState();
   }
   @override
@@ -147,15 +149,17 @@ class _CloReportState extends State<CloReport> {
                 ),
                 DataCell(
                   TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','F${(14+index).toString()}' )
+                    controller: CLO1_Achievment_Report_controller[index],
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
                   ),
                 ),
+
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','G${(14+index).toString()}' )
+                       controller: CLO2_Achievment_Report_controller[index],
+
 
                     decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -164,7 +168,16 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','H${(14+index).toString()}' )
+                        controller: CLO3_Achievment_Report_controller[index],
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+
+                    DataCell(
+                      TextFormField(
+                        controller: CLO4_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -172,7 +185,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','I${(14+index).toString()}' )
+                        controller: CLO5_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -180,7 +193,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','J${(14+index).toString()}' )
+                        controller: CLO6_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -188,7 +201,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','K${(14+index).toString()}' )
+                        controller: CLO7_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -196,7 +209,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','L${(14+index).toString()}' )
+                        controller: CLO8_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -204,7 +217,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','M${(14+index).toString()}' )
+                        controller:   CLO9_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -212,7 +225,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','N${(14+index).toString()}' )
+                        controller: CLO10_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),
@@ -220,15 +233,7 @@ class _CloReportState extends State<CloReport> {
                     ),
                     DataCell(
                       TextFormField(
-                    controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','O${(14+index).toString()}' )
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                    ),
-                    DataCell(
-                      TextFormField(
-                        controller: TextEditingController(text: ExcelHelper.readCell('CLO Acheivement Report','P${(14+index).toString()}' )
+                        controller: CLO_Total_Achievment_Report_controller[index],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),

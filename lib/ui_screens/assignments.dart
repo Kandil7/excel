@@ -166,10 +166,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign1_Q1_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign1_Q1_$index', value);
-                                      ExcelHelper.updateCell('Assignment','F${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','F${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -191,10 +192,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign1_Q2_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign1_Q2_$index', value);
-                                      ExcelHelper.updateCell('Assignment','G${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','G${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -216,10 +217,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign1_Q3_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign1_Q3_$index', value);
-                                      ExcelHelper.updateCell('Assignment','H${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','H${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -241,10 +243,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign1_Q4_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign1_Q4_$index', value);
-                                      ExcelHelper.updateCell('Assignment','I${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','I${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -266,10 +268,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign1_Q5_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign1_Q5_$index', value);
-                                      ExcelHelper.updateCell('Assignment','J${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','J${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -300,10 +302,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign2_Q1_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign2_Q1_$index', value);
-                                      ExcelHelper.updateCell('Assignment','K${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','K${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -325,10 +327,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign2_Q2_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign2_Q2_$index', value);
-                                      ExcelHelper.updateCell('Assignment','L${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','L${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -350,10 +352,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign2_Q3_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign2_Q3_$index', value);
-                                      ExcelHelper.updateCell('Assignment','M${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','M${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -375,10 +378,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign2_Q4_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign2_Q4_$index', value);
-                                      ExcelHelper.updateCell('Assignment','N${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','N${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -400,10 +404,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign2_Q5_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign2_Q5_$index', value);
-                                      ExcelHelper.updateCell('Assignment','O${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','O${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -434,10 +439,10 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign3_Q1_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign3_Q1_$index', value);
-                                      ExcelHelper.updateCell('Assignment','P${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','P${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -459,10 +464,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign3_Q2_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign3_Q2_$index', value);
-                                      ExcelHelper.updateCell('Assignment','Q${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','Q${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -484,10 +490,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign3_Q3_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign3_Q3_$index', value);
-                                      ExcelHelper.updateCell('Assignment','R${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','R${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -509,10 +516,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign3_Q4_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign3_Q4_$index', value);
-                                      ExcelHelper.updateCell('Assignment','S${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','S${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -534,10 +542,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign3_Q5_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign3_Q5_$index', value);
-                                      ExcelHelper.updateCell('Assignment','T${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','T${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -568,10 +577,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign4_Q1_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign4_Q1_$index', value);
-                                      ExcelHelper.updateCell('Assignment','U${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','U${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -593,10 +603,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign4_Q2_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign4_Q2_$index', value);
-                                      ExcelHelper.updateCell('Assignment','V${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','V${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -618,10 +629,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign4_Q3_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign4_Q3_$index', value);
-                                      ExcelHelper.updateCell('Assignment','W${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','W${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -643,10 +655,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign4_Q4_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign4_Q4_$index', value);
-                                      ExcelHelper.updateCell('Assignment','X${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','X${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -668,10 +681,11 @@ class _AssignmentsState extends State<Assignments> {
                                   height: 20,
                                   child: TextFormField(
                                     controller: Assign4_Q5_controller[index],
-                                    onChanged: (value) {
+                                    onChanged: (value) async {
+                                      if(value!=null){
                                       GetStorageHelper.writeData(
                                           'Assign4_Q5_$index', value);
-                                      ExcelHelper.updateCell('Assignment','Y${(31+index).toString()}',value);
+                                      await ExcelHelper.updateCell('Assignments','Y${(31+index).toString()}', value);}
                                     },
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -694,7 +708,7 @@ class _AssignmentsState extends State<Assignments> {
                         width: 40,
                         height: 20,
                         child: TextFormField(
-                          controller:TextEditingController(text: ExcelHelper.readCell('Assignment','Z${(31+index).toString()}')
+                          controller:Assign_total_marks_controller[index],
 
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -707,8 +721,7 @@ class _AssignmentsState extends State<Assignments> {
                         width: 40,
                         height: 20,
                         child: TextFormField(
-    controller:TextEditingController(text:ExcelHelper.readCell('Assignment','AA${(31+index).toString()}')),
-                          //controller: Assign1_total_controller[index],
+                          controller: Assign1_total_controller[index],
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                           ),
@@ -720,7 +733,8 @@ class _AssignmentsState extends State<Assignments> {
                         width: 40,
                         height: 20,
                         child: TextFormField(
-                          controller:TextEditingController(text:ExcelHelper.readCell('Assignment','AB${(31+index).toString()}')),
+                          controller: Assign2_total_controller[index],
+
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                           ),
@@ -732,7 +746,7 @@ class _AssignmentsState extends State<Assignments> {
                         width: 40,
                         height: 20,
                         child: TextFormField(
-                          controller:TextEditingController(text:ExcelHelper.readCell('Assignment','AC${(31+index).toString()}')),
+                          controller: Assign3_total_controller[index],
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                           ),
@@ -744,7 +758,7 @@ class _AssignmentsState extends State<Assignments> {
                         width: 40,
                         height: 20,
                         child: TextFormField(
-                          controller: TextEditingController(text:ExcelHelper.readCell('Assignment','AD${(31+index).toString()}'))
+                          controller: Assign4_total_controller[index],
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                           ),

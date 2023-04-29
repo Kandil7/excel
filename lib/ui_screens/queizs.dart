@@ -174,13 +174,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz1_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz1_Q1_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz1_total_controller![index].text = GetStorageHelper.readData('Quiz1_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','F${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','F${(31+index).toString()}', value);}
                                 },
 
 
@@ -203,13 +200,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz1_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz1_Q2_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz1_total_controller![index].text = GetStorageHelper.readData('Quiz1_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','G${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','G${(31+index).toString()}', value);}
                                 },
 
 
@@ -232,13 +226,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz1_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quize1_Q3_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz1_total_controller![index].text = GetStorageHelper.readData('Quiz1_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','H${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','H${(31+index).toString()}', value);}
                                 },
 
 
@@ -261,12 +252,13 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz1_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz1_Q4_$index', value);
-                                  CalculateTotalQuizMark();
+
                                   setState(() {
                                     Quiz1_total_controller![index].text = GetStorageHelper.readData('Quiz1_total_$index');
                                   });
+                                  await ExcelHelper.updateCell('Quizzes','I${(31+index).toString()}', value);}
                                 },
 
                                 decoration: InputDecoration(
@@ -288,13 +280,11 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz1_Q5_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz1_Q5_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz1_total_controller![index].text = GetStorageHelper.readData('Quiz1_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','J${(31+$index).toString()}', value);
+
+
+                                  await ExcelHelper.updateCell('Quizzes','J${(31+index).toString()}', value);}
                                 },
 
 
@@ -330,13 +320,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz2_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz2_Q1_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz2_total_controller![index].text = GetStorageHelper.readData('Quiz2_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','K${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','K${(31+index).toString()}', value);}
                                 },
 
 
@@ -359,13 +346,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz2_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz2_Q2_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz2_total_controller![index].text = GetStorageHelper.readData('Quiz2_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','L${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','L${(31+index).toString()}', value);}
                                 },
 
 
@@ -390,13 +374,10 @@ class _QuizState extends State<Quiz> {
 
 
                                 controller: Quiz2_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz2_Q3_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz2_total_controller![index].text = GetStorageHelper.readData('Quiz2_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','M${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','M${(31+index).toString()}', value);}
                                 },
 
 
@@ -419,13 +400,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz2_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz2_Q4_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz2_total_controller![index].text = GetStorageHelper.readData('Quiz2_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','N${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','N${(31+index).toString()}', value);}
                                 },
 
 
@@ -448,13 +426,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz2_Q5_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz2_Q5_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz2_total_controller![index].text = GetStorageHelper.readData('Quiz2_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','O${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','O${(31+index).toString()}', value);}
                                 },
 
 
@@ -490,13 +465,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz3_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz3_Q1_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz3_total_controller![index].text = GetStorageHelper.readData('Quiz3_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','P${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','P${(31+index).toString()}', value);}
                                 },
 
 
@@ -519,13 +491,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz3_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz3_Q2_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz3_total_controller![index].text = GetStorageHelper.readData('Quiz3_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','Q${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','Q${(31+index).toString()}', value);}
                                 },
 
 
@@ -548,13 +517,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz3_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz3_Q3_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz3_total_controller![index].text = GetStorageHelper.readData('Quiz3_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','R${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','R${(31+index).toString()}', value);}
                                 },
 
 
@@ -577,13 +543,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz3_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz3_Q4_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz3_total_controller![index].text = GetStorageHelper.readData('Quiz3_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','S${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','S${(31+index).toString()}', value);}
                                 },
 
 
@@ -606,14 +569,14 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller:Quiz3_Q5_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz3_Q5_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz3_total_controller![index].text = GetStorageHelper.readData('Quiz3_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','T${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','T${(31+index).toString()}', value);}
+                                  
                                 },
+    
+    
 
 
                                 decoration: InputDecoration(
@@ -648,13 +611,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz4_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz4_Q1_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz4_total_controller![index].text = GetStorageHelper.readData('Quiz4_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','U${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','U${(31+index).toString()}', value);}
                                 },
 
 
@@ -677,13 +637,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz4_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz4_Q2_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz4_total_controller![index].text = GetStorageHelper.readData('Quiz4_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','V${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','V${(31+index).toString()}', value);}
                                 },
 
 
@@ -706,13 +663,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz4_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz4_Q3_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz4_total_controller![index].text = GetStorageHelper.readData('Quiz4_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','W${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','W${(31+index).toString()}', value);}
                                 },
 
 
@@ -735,13 +689,10 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz4_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('Quiz4_Q4_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz4_total_controller![index].text = GetStorageHelper.readData('Quiz4_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','X${(31+$index).toString()}', value);
+
+                                  await ExcelHelper.updateCell('Quizzes','X${(31+index).toString()}', value);}
                                 },
 
 
@@ -764,14 +715,15 @@ class _QuizState extends State<Quiz> {
                               height: 20,
                               child: TextFormField(
                                 controller: Quiz4_Q5_controller[index],
-                                onChanged: (value){
-                                  GetStorageHelper.writeData('Quiz4_Q5_$index', value);
-                                  CalculateTotalQuizMark();
-                                  setState(() {
-                                    Quiz4_total_controller![index].text = GetStorageHelper.readData('Quiz4_total_$index');
-                                  });
-                                  ExcelHelper.updateCell('Quizzes','Y${(31+$index).toString()}', value);
-                                },
+                                onChanged: (value)async{
+                                 if(value !=null){
+                                    await GetStorageHelper.writeData('Quiz4_Q5_$index', value);
+
+                                  
+                                   await ExcelHelper.updateCell('Quizzes','Y${(31+index).toString()}', value);}
+                                 },
+                                
+  
 
 
                                 decoration: InputDecoration(
@@ -798,8 +750,7 @@ class _QuizState extends State<Quiz> {
                     width: 40,
                     height: 20,
                     child: TextFormField(
-                      controller:TextEditingController(text:ExcelHelper.readCell('Quizzes','Z${(31+index).toString()}').toString()),
-                      //controller: Quizes_total_marks_controller![index],
+                      controller: Quizes_total_marks_controller![index],
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                       ),
@@ -811,10 +762,7 @@ class _QuizState extends State<Quiz> {
                     width: 40,
                     height: 20,
                     child: TextFormField(
-                      controller: ExcelHelper.readCell('Quizzes','AA${(31+index).toString()}').toString()=='0'?TextEditingController(text:''):TextEditingController(text:ExcelHelper.readCell('Quizzes','AA${(31+index).toString()}').toString()),
-
-
-
+                      controller:Quiz1_total_controller[index],
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                       ),
@@ -826,7 +774,7 @@ class _QuizState extends State<Quiz> {
                     width: 40,
                     height: 20,
                     child: TextFormField(
-                      controller: ExcelHelper.readCell('Quizzes','AB${(31+index).toString()}').toString()=='0'?TextEditingController(text:''):TextEditingController(text:ExcelHelper.readCell('Quizzes','AB${(31+index).toString()}').toString()),
+                      controller:Quiz2_total_controller[index],
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                       ),
@@ -838,7 +786,7 @@ class _QuizState extends State<Quiz> {
                     width: 40,
                     height: 20,
                     child: TextFormField(
-                      controller: ExcelHelper.readCell('Quizzes','AC${(31+index).toString()}').toString()=='0'?TextEditingController(text:''):TextEditingController(text:ExcelHelper.readCell('Quizzes','AC${(31+index).toString()}').toString()),
+                      controller:Quiz3_total_controller[index],
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                       ),
@@ -850,7 +798,7 @@ class _QuizState extends State<Quiz> {
                     width: 40,
                     height: 20,
                     child: TextFormField(
-                      controller: ExcelHelper.readCell('Quizzes','AD${(31+index).toString()}').toString()=='0'?TextEditingController(text:''):TextEditingController(text:ExcelHelper.readCell('Quizzes','AD${(31+index).toString()}').toString()),
+                      controller:Quiz4_total_controller[index],
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                       ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:gsheets/gsheets.dart';
 
 import '../utils/buttom_nave.dart';
+import 'Excel helper/Gsheet_helper.dart';
 
 const _credentials = r'''
 {
@@ -20,13 +22,18 @@ const _credentials = r'''
 const _spreadsheetId = '1EekARs23mUfLeMNBqP1sS3DkjmCDEi_DfcTxWglu38k';
 
 
-void main()async {
+ main()async {
 
-  WidgetsFlutterBinding.ensureInitialized();
+ // WidgetsFlutterBinding.ensureInitialized();
   final gsheets = GSheets(_credentials);
   // fetch spreadsheet by its id
   final ss = await gsheets.spreadsheet(_spreadsheetId);
-  await GsheetHelper().updatefile();
+  // get worksheet by its title
+
+  
+
+  //await GsheetHelper().updatefile(ss);
+
 
 
 

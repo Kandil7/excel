@@ -14,11 +14,12 @@ Widget customDropMenu({
       Text(label),
       DropdownMenu(
         controller: controller,
-        onSelected: (value) {
+        onSelected: (value) async {
+          if(value!=null){
           GetStorageHelper.writeData(dataValue, value);
-          ExcelHelper.updateCell('CLOs', cell, value);}',
-              GetStorageHelper.readData('StudentID_$index'));
+          await ExcelHelper.updateCell('CLOs', cell, value.toString());}
         },
+
         initialSelection: GetStorageHelper.readData(dataValue),
         width: 95,
         dropdownMenuEntries: [

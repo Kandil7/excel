@@ -1,4 +1,6 @@
+import 'package:excel/Excel%20helper/Excel_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_excel/excel.dart';
 
 import '../storage_helper/get_storage_helper.dart';
 import '../utils/constant.dart';
@@ -68,25 +70,12 @@ initFinalController(){
       text: GetStorageHelper.readData('FinalExam_Q15_$index')
   ));
   FinalExam_Total_Marks_controller=List.generate(total, (index) {
-    // GetStorageHelper.writeData('FinalExam_Total_Marks_$index', (int.parse(FinalExam_Q1_controller[index].text) +
-    //     int.parse(FinalExam_Q2_controller[index].text) +
-    //     int.parse(FinalExam_Q3_controller[index].text) +
-    //     int.parse(FinalExam_Q4_controller[index].text) +
-    //     int.parse(FinalExam_Q5_controller[index].text) +
-    //     int.parse(FinalExam_Q6_controller[index].text) +
-    //     int.parse(FinalExam_Q7_controller[index].text) +
-    //     int.parse(FinalExam_Q8_controller[index].text) +
-    //     int.parse(FinalExam_Q9_controller[index].text) +
-    //     int.parse(FinalExam_Q10_controller[index].text) +
-    //     int.parse(FinalExam_Q11_controller[index].text) +
-    //     int.parse(FinalExam_Q12_controller[index].text) +
-    //     int.parse(FinalExam_Q13_controller[index].text) +
-    //     int.parse(FinalExam_Q14_controller[index].text) +
-    //     int.parse(FinalExam_Q15_controller[index].text)));
+
     return TextEditingController(
       text: GetStorageHelper.readData('FinalExam_Total_Marks_$index')
   );
-  });
+  }
+  );
 
 }
 
@@ -124,31 +113,26 @@ initFinalExamsControllers(){
         text: GetStorageHelper.readData('FinalExam_Q15_$i')));
   }
 }
-calculatTotalMarks(){
+var cell;
+GetTotalFinalExamMarks()async{
   for (int i = 0; i < total; i++) {
-    FinalExam_Total_Marks_controller.add(TextEditingController(
-        text: (int.parse(FinalExam_Q1_controller[i].text) +
-                int.parse(FinalExam_Q2_controller[i].text) +
-                int.parse(FinalExam_Q3_controller[i].text) +
-                int.parse(FinalExam_Q4_controller[i].text) +
-                int.parse(FinalExam_Q5_controller[i].text) +
-                int.parse(FinalExam_Q6_controller[i].text) +
-                int.parse(FinalExam_Q7_controller[i].text) +
-                int.parse(FinalExam_Q8_controller[i].text) +
-                int.parse(FinalExam_Q9_controller[i].text) +
-                int.parse(FinalExam_Q10_controller[i].text) +
-                int.parse(FinalExam_Q11_controller[i].text) +
-                int.parse(FinalExam_Q12_controller[i].text) +
-                int.parse(FinalExam_Q13_controller[i].text) +
-                int.parse(FinalExam_Q14_controller[i].text) +
-                int.parse(FinalExam_Q15_controller[i].text))
-            .toString()));
+    ExcelHelper.readCell('FinalExam', 'U${(i + 31).toString()}').then((value) {
+      cell = value;
+      print('cellIndex:$cell');
+      if (cell != null) {
+        FinalExam_Total_Marks_controller[i].text = cell;
+        GetStorageHelper.writeData(
+            'FinalExam_Total_Marks_$i', cell);
+      }
+    });
+
   }
 
 
 }
 
-initFinalExam(){
+initFinalExam() async {
   initFinalExamsControllers();
-  calculatTotalMarks();
+  await GetTotalFinalExamMarks();
 }
+

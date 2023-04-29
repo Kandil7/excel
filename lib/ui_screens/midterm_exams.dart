@@ -125,9 +125,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q1_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','F${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','F${(31+index).toString()}', value);}
                                 },
 
                                 decoration: InputDecoration(
@@ -149,9 +149,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q2_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','G${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','G${(31+index).toString()}', value);}
                                 },
 
 
@@ -175,9 +175,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q3_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','H${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','H${(31+index).toString()}', value);}
                                 },
 
 
@@ -200,9 +200,10 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{
+                                  if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q4_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','I${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','I${(31+index).toString()}', value);}
                                 },
 
 
@@ -225,9 +226,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q5_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q5_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','J${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','J${(31+index).toString()}', value);}
                                 },
 
 
@@ -250,9 +251,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q6_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q6_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','K${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','K${(31+index).toString()}', value);}
                                 },
 
 
@@ -276,9 +277,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q7_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q7_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','L${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','L${(31+index).toString()}', value);}
                                 },
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -298,9 +299,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q8_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q8_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','M${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','M${(31+index).toString()}', value);}
                                 },
 
 
@@ -323,9 +324,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam1_Q9_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q9_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','N${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','N${(31+index).toString()}', value);}
                                 },
 
 
@@ -348,9 +349,9 @@ super.initState();
                               height: 20,
                               child: TextFormField(
 controller: MidtermExam1_Q10_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam1_Q10_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','O${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','O${(31+index).toString()}', value);}
                                 },
 
                                 decoration: InputDecoration(
@@ -383,9 +384,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q1_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q1_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','P${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidtermExam','P${(31+index).toString()}', value);}
                                 },
 
 
@@ -408,9 +409,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q2_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q2_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','Q${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidtermExam','Q${(31+index).toString()}', value);}
                                 },
 
 
@@ -433,9 +434,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q3_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q3_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','R${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidtermExam','R${(31+index).toString()}', value);}
                                 },
 
 
@@ -458,9 +459,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q4_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q4_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','S${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidtermExam','S${(31+index).toString()}', value);}
                                 },
 
 
@@ -483,9 +484,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q5_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q5_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','T${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','T${(31+index).toString()}', value);}
                                 },
 
 
@@ -508,9 +509,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q6_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q6_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','U${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','U${(31+index).toString()}', value);}
                                 },
 
 
@@ -533,9 +534,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q7_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q7_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','V${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','V${(31+index).toString()}', value);}
                                 },
 
 
@@ -558,9 +559,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q8_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q8_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','W${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','W${(31+index).toString()}', value);}
                                 },
 
 
@@ -583,9 +584,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q9_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q9_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','X${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','X${(31+index).toString()}', value);}
                                 },
 
 
@@ -608,9 +609,9 @@ controller: MidtermExam1_Q10_controller[index],
                               height: 20,
                               child: TextFormField(
                                 controller: MidtermExam2_Q10_controller[index],
-                                onChanged: (value){
+                                onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('MidtermExam2_Q10_$index', value);
-                                  ExcelHelper.updateCell('MidtermExam','Y${(31+index).toString()}',value);
+                                  await ExcelHelper.updateCell('MidTermExams','Y${(31+index).toString()}', value);}
                                 },
 
 
@@ -633,7 +634,7 @@ controller: MidtermExam1_Q10_controller[index],
                 ),
                 DataCell(
                   TextFormField(
-                   controller: TextEditingController(text:ExcelHelper.readCell('MidtermExam','Z${(31+index).toString()}')),
+                   controller: MidtermExam_total_marks_controller[index],
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
@@ -641,7 +642,7 @@ controller: MidtermExam1_Q10_controller[index],
                 ),
                 DataCell(
                   TextFormField(
-                    controller:TextEditingController(text:ExcelHelper.readCell('MidtermExam','AA${(31+index).toString()}')),
+                    controller:MidtermExam1_total_controller[index],
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
@@ -649,7 +650,7 @@ controller: MidtermExam1_Q10_controller[index],
                 ),
                 DataCell(
                   TextFormField(
-                    controller:TextEditingController(text:ExcelHelper.readCell('MidtermExam','AB${(31+index).toString()}')),
+                    controller:MidtermExam2_total_controller[index],
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),

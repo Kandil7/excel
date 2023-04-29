@@ -103,11 +103,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q1_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q1_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam', 'F${(11+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam', 'F${(31+index).toString()}', value);}
                                 },
 
 
@@ -130,11 +131,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q2_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q2_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','G${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','G${(31+index).toString()}', value);}
                                 },
 
 
@@ -157,11 +159,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q3_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q3_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','H${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','H${(31+index).toString()}', value);}
                                 },
 
 
@@ -184,11 +187,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q4_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q4_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','I${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','I${(31+index).toString()}', value);}
 
                                 },
 
@@ -212,11 +216,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q5_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q5_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','J${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','J${(31+index).toString()}', value);}
                                 },
 
 
@@ -239,11 +244,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q6_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q6_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','K${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','K${(31+index).toString()}', value);}
 
                                 },
 
@@ -267,11 +273,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q7_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q7_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','L${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','L${(31+index).toString()}', value);}
                                 },
 
 
@@ -294,9 +301,9 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q8_controller[index],
-                                  onChanged: (value){
+                                  onChanged: (value)async{if(value !=null){
                                   GetStorageHelper.writeData('FinalExam_Q8_$index', value);
-                                  ExcelHelper.updateCell('FinalExam','M${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell('FinalExam','M${(31+index).toString()}', value);}
                                   },
 
 
@@ -319,11 +326,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q9_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if (value != null) {
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q9_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','N${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','N${(31+index).toString()}', value);}
                                 },
 
 
@@ -346,11 +354,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q10_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if (value != null) {
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q10_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','O${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','O${(31+index).toString()}', value);}
                                 },
 
 
@@ -373,11 +382,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q11_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if (value != null) {
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q11_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','P${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','P${(31+index).toString()}', value);}
                                 },
 
 
@@ -400,11 +410,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q12_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if (value != null) {
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q12_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','Q${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','Q${(31+index).toString()}', value);}
                                 },
 
 
@@ -427,11 +438,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q13_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q13_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','R${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','R${(31+index).toString()}', value);}
                                 },
 
 
@@ -454,11 +466,12 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q14_controller[index],
-                                onChanged: (value) {
+                                onChanged: (value) async {
+                                  if(value !=null){
                                   GetStorageHelper.writeData(
                                       'FinalExam_Q14_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','S${(31+index).toString()}', value);
+                                  await ExcelHelper.updateCell(
+                                      'FinalExam','S${(31+index).toString()}', value);}
                                 },
 
 
@@ -481,12 +494,13 @@ class _FinalExamState extends State<FinalExam> {
                               height: 20,
                               child: TextFormField(
                                 controller:FinalExam_Q15_controller[index],
-                                onChanged: (value) {
-                                  GetStorageHelper.writeData(
-                                      'FinalExam_Q15_$index', value);
-                                  ExcelHelper.updateCell(
-                                      'FinalExam','T${(31+index).toString()}', value);
-                                },
+                                onChanged: (value) async {
+                                  if(value !=null){
+await GetStorageHelper.writeData(
+'FinalExam_Q15_$index', value);
+ await ExcelHelper.updateCell(
+'FinalExam','T${(31+index).toString()}', value);
+}},
 
 
                                 decoration: InputDecoration(
@@ -509,7 +523,8 @@ class _FinalExamState extends State<FinalExam> {
                 ),
                     DataCell(
                       TextFormField(
-                        controller:TextEditingController(text: ExcelHelper.readCell('FinalExam','U${(31+index).toString()}')),
+                        controller:FinalExam_Total_Marks_controller[index],
+
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                         ),

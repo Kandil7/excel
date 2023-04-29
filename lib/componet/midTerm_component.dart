@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Excel helper/Excel_service.dart';
 import '../storage_helper/get_storage_helper.dart';
 import '../utils/constant.dart';
 
@@ -198,5 +199,36 @@ calculateMidtermExamTotal(){
 }
 initMidTerm(){
   initMedtermExamsControllers();
-  calculateMidtermExamTotal();
+  getMidTermFromExcel();
+}
+var cellindex;
+getMidTermFromExcel()async{
+
+  for (var i = 0; i < total; i++) {
+    for (var j = 0; j < 3; j++) {
+       cellindex = ExcelHelper.convertToCellReference((j+5), (i + 31));
+
+      await ExcelHelper.readCell('MidTermExams', cellindex).then((
+          value) {
+        if(value == null || value.isEmpty){
+          value = '0';
+        }
+
+        if (j == 0) {
+          MidtermExam_total_marks_controller[i].text = value;
+          GetStorageHelper.writeData('MidtermExam_total_marks_$i', value);
+        }
+        else if (j == 1) {
+          MidtermExam1_total_controller[i].text = value;
+          GetStorageHelper.writeData('MidtermExam1_total_$i', value);
+        }
+        else if (j == 2) {
+          MidtermExam2_total_controller[i].text = value;
+          GetStorageHelper.writeData('MidtermExam2_total_$i', value);
+        }
+      }
+      );
+    }
+
+}
 }

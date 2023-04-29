@@ -383,7 +383,7 @@ class _TitledRangeSelectorState extends State<_TitledRangeSelector> {
                               divisions: 9,
                               min: widget.range.start,
                               max: widget.range.end,
-                              onChanged: (v) {
+                              onChanged:  (v) {
                                 setState(() {
                                   _values = v;
                                 });

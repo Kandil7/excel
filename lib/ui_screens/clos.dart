@@ -2,6 +2,8 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:excel/componet/componet.dart';
 import 'package:excel/storage_helper/get_storage_helper.dart';
 import 'package:flutter/material.dart';
+import '../Excel helper/Excel_service.dart';
+
 
 import '../componet/widget.dart';
 import '../utils/constant.dart';
@@ -56,12 +58,15 @@ class _closState extends State<clos> {
                     DataCell(
                       TextFormField(
                         controller: DescriptionController[index],
-                        onChanged: (value) {
+                        onChanged: (value) async {
+                          if (value != null) {
+                            await
                           GetStorageHelper.writeData(
                               'Description_CLO_$index', value);
-                          ExcelHelper.updateCell(
-                          "CLOS", "D${(13+index).toString()}", value);
+                          await ExcelHelper.updateCell(
+                          "CLOs", "D${(13+index).toString()}", value);}
                         },
+                        
                         decoration: InputDecoration(
                           hintText: ' Write Description',
                           border: OutlineInputBorder(),
@@ -217,6 +222,7 @@ class _closState extends State<clos> {
                                       controller: V3_controller[index],
                                       label: 'V3',
                                       dataValue: 'V3_CLO_$index',
+                                      cell: 'O${(13+index).toString()}',
                                     ),
                                   ],
                                 ),
